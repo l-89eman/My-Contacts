@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css"
+    />
+    <title>My Contacts</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center align">My Contacts</h1>
+      <input type="text" id="filterInput" placeholder="Search names...." />
+
+      <ul id="names" class="collection with-header">
+        <li class="collection-header">
+          <h5>A</h5>
+        </li>
+        <li class="collection-item">
+          <a href="#">Amina</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Alisha</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Ansa</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Ammara</a>
+        </li>
+
+        <!-- b -->
+        <li class="collection-header">
+          <h5>B</h5>
+        </li>
+        <li class="collection-item">
+          <a href="#">Bisma</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Bushra</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Baira</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Bilal</a>
+        </li>
+        <li class="collection-header">
+            <h5>G</h5>
+          </li>
+          <li class="collection-item">
+            <a href="#">Gajni</a>
+          </li>
+          <li class="collection-item">
+            <a href="#">Ghazala</a>
+          </li>
+        <!-- h -->
+        <li class="collection-header">
+          <h5>H</h5>
+        </li>
+        <li class="collection-item">
+          <a href="#">Hamail</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Hafsa</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Haram</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Horia</a>
+        </li>
+        <li class="collection-header">
+            <h5>K</h5>
+          </li>
+          <li class="collection-item">
+            <a href="#">Kashmala</a>
+          </li>
+          <li class="collection-item">
+            <a href="#">kianat</a>
+          </li>
+        <li class="collection-header">
+            <h5>L</h5>
+          </li>
+          <li class="collection-item">
+            <a href="#">Laraib</a>
+          </li>
+          <li class="collection-item">
+            <a href="#">Laraib</a>
+          </li>
+          
+          <li class="collection-header">
+            <h5>R</h5>
+          </li>
+          <li class="collection-item">
+            <a href="#">Rukhsar</a>
+          </li>
+          <li class="collection-item">
+            <a href="#">Rabia</a>
+          </li>
+          <li class="collection-header">
+            <h5>Z</h5>
+          </li>
+          <li class="collection-item">
+            <a href="#">Zulfiqar</a>
+          </li>
+          <li class="collection-item">
+            <a href="#">Zainab</a>
+          </li>
+         
+        
+
+      </ul>
+    </div>
+
+    <!-- Javascript starts from here -->
+    <script>
+      // get input element
+      let filterInput = document.getElementById("filterInput");
+      // add event listener
+      filterInput.addEventListener("keyup", filterNames);
+
+      function filterNames() {
+        // get value of input
+        let filterValue = document.getElementById("filterInput").value.toUpperCase();
+        console.log(filterValue);
+
+        let ul = document.getElementById("names");
+        let li = ul.querySelectorAll("li.collection-item");
+
+        for (let i = 0; i < li.length; i++) {
+          let a = li[i].getElementsByTagName("a")[0];
+
+          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+  li[i].style.display = ""; // Corrected to show matching items
+} else {
+  li[i].style.display = "none"; // Corrected to hide non-matching items
+}
+
+        }
+      }
+    </script>
+  </body>
+</html>
